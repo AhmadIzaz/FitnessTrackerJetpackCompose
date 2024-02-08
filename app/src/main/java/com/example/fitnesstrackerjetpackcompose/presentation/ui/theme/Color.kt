@@ -1,4 +1,4 @@
-package com.example.fitnesstrackerjetpackcompose.ui.theme
+package com.example.fitnesstrackerjetpackcompose.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
