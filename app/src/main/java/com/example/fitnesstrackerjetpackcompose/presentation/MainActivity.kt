@@ -1,4 +1,4 @@
-package com.example.fitnesstrackerjetpackcompose.presentation.ui.screen.main
+package com.example.fitnesstrackerjetpackcompose.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.fitnesstrackerjetpackcompose.presentation.ui.naivgation.AppNavigation
 import com.example.fitnesstrackerjetpackcompose.presentation.ui.theme.FitnessTrackerJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,30 +18,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FitnessTrackerJetpackComposeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+                AppNavigation()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FitnessTrackerJetpackComposeTheme {
-        Greeting("Android")
     }
 }
