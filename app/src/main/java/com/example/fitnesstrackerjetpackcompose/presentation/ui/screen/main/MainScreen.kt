@@ -10,38 +10,16 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
-fun MainScreen(navController: NavHostController) {
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(text = "Good Morning, User!", style = MaterialTheme.typography.bodyLarge)
+fun MainScreen(navigationController: NavHostController ,stepCount: Int) {
+    Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(text = "Steps Today", style = MaterialTheme.typography.bodyMedium)
         Spacer(modifier = Modifier.height(16.dp))
-        QuickActions()
-        Spacer(modifier = Modifier.height(16.dp))
-        ActivitySummary()
-        // Add more components as needed
+        Text("$stepCount", style = MaterialTheme.typography.bodyMedium)
     }
-}
-
-@Composable
-fun QuickActions() {
-    // Example of quick actions
-    Row(horizontalArrangement = Arrangement.SpaceBetween) {
-        Button(onClick = { /* Handle click */ }) {
-            Text("Log Workout")
-        }
-        Button(onClick = { /* Handle click */ }) {
-            Text("Add Meal")
-        }
-    }
-}
-
-@Composable
-fun ActivitySummary() {
-    // Placeholder for activity summary
-    Text("Activity Summary Here")
-    // Implement using cards, charts, etc.
 }
