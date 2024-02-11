@@ -1,14 +1,18 @@
 package com.example.fitnesstrackerjetpackcompose
 
 import android.app.Application
-import dagger.Component
+import com.example.fitnesstrackerjetpackcompose.di.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-// Definition of the Application graph
-@Component
-interface ApplicationComponent { }
+class MyApplication : Application() {
 
-// appComponent lives in the Application class to share its lifecycle
-class MyApplication: Application() {
-    // Reference to the application graph that is used across the whole app
-    // val appComponent = DaggerAp.create()
+    override fun onCreate() {
+        super.onCreate()
+
+        startKoin {
+            androidContext(this@MyApplication)
+            modules(appModule)
+        }
+    }
 }

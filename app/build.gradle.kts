@@ -1,8 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-
 }
 
 android {
@@ -69,8 +67,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation("com.google.dagger:dagger:2.28.3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    kapt("com.google.dagger:dagger-compiler:2.28.3")
+    implementation ("io.insert-koin:koin-android:3.4.0")
+    implementation ("io.insert-koin:koin-androidx-compose:3.4.0")
+
 
 }
