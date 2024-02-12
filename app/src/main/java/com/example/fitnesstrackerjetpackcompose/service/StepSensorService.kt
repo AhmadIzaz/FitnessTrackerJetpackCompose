@@ -35,6 +35,7 @@ class StepSensorService(private val context: Context) : SensorEventListener {
         }
     }
 
+    // To unregister the sensor on onDestroy()
     fun unregisterSensor() {
         sensorManager?.unregisterListener(this)
     }
