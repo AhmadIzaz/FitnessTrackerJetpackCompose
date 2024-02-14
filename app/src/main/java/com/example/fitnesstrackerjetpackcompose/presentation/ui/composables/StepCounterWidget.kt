@@ -1,6 +1,8 @@
 package com.example.fitnesstrackerjetpackcompose.presentation.ui.composables
 
+import StepProgressLoader
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,31 +21,34 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun StepCounterWidget(stepCount: Int) {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        // "Today" label outside and above the circle
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(Color.Gray), contentAlignment = Alignment.Center) {
         Text(
             text = "Today",
-            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-            modifier = Modifier.align(Alignment.TopCenter).padding(top = 32.dp)
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .padding(top = 32.dp)
         )
-        // Box to contain the circle and step count
         Box(contentAlignment = Alignment.Center, modifier = Modifier.size(200.dp)) {
-            Canvas(modifier = Modifier.matchParentSize()) {
+            /*Canvas(modifier = Modifier.matchParentSize()) {
                 drawCircle(
                     color = Color.LightGray,
                     radius = size.minDimension / 2,
-                    style = Stroke(width = 12.dp.toPx())
-                )
+                    style = Stroke(width = 20.dp.toPx())
+                )*/
+            StepProgressLoader(stepsTaken = 14, stepGoal = 20)
             }
+            /*
             // Step count text inside the circle
             Text(
                 text = "$stepCount",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
+            */
         }
     }
-}
 
 @Preview(showBackground = true)
 @Composable
