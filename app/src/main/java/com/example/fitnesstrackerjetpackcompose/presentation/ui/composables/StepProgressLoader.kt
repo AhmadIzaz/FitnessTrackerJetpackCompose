@@ -44,7 +44,7 @@ fun StepProgressLoader(
             // Draw loader progress
             drawArc(
                 color = Color.Blue,
-                startAngle = 90f, // Adjust start angle for different fill initiation
+                startAngle = -90f, // Adjust start angle for different fill initiation
                 sweepAngle = sweepAngle,
                 useCenter = false,
                 topLeft = topLeftOffset,

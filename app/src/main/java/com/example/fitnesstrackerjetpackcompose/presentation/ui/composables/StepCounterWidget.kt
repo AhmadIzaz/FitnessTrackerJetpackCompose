@@ -37,7 +37,7 @@ fun StepCounterWidget(stepCount: Int) {
                     radius = size.minDimension / 2,
                     style = Stroke(width = 20.dp.toPx())
                 )*/
-            StepProgressLoader(stepsTaken = 14, stepGoal = 20)
+            StepProgressLoader(stepsTaken = 5, stepGoal = 20)
             }
             /*
             // Step count text inside the circle
